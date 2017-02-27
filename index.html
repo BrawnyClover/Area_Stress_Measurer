@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>please</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./d3.min.js"></script>
+    <script src="./topojson.min.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <script>
+        var canvas = d3.select("body").append("svg")
+            .attr("width", 750)
+            .attr("height", 700);
+
+        d3.json("./ma/mp.geojson", function(data) {
+            var group = canvas.selectAll("g")
+                .data(data.features)
+                .enter()
+                .append("g");
+            var projection = d3.geo.mercator().scale(5000).translate([-10900, 3660]);
+            var path = d3.geo.path().projection(projection);
+
+            var areas = group.append("path")
+                .attr("d", path)
+                .attr("stroke", "white")
+                .attr("fill", "black")
+                .attr("id", function(d) {
+                    return d.properties.name_eng;
+                })
+                .attr("class", "path")
+                .attr("opacity","1")
+                .on("mouseover", function() {
+                    d3.select(this).transition()
+                        .duration(250).style("fill", "#eeeeef")
+                  
+
+                })
+                .on("mouseout", function() {
+                    d3.select(this).transition()
+                        .ease("quad")
+                        .duration(300)
+                        .style("fill", "black")
+                });
+        })
+        console.log("mapcreated");
+    </script>
+</body>
+
+</html>

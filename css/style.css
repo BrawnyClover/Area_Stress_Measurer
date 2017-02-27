@@ -1,0 +1,7 @@
+body{
+  background: url('./bg.jpg');
+}
+
+svg{
+  transform:"scale(2.0)";
+}
