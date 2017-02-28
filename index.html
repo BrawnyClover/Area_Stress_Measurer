@@ -15,6 +15,7 @@
 
 <body>
     <script>
+
         var canvas = d3.select("body").append("svg")
             .attr("width", 750)
             .attr("height", 700);
@@ -30,23 +31,31 @@
             var areas = group.append("path")
                 .attr("d", path)
                 .attr("stroke", "white")
+                .attr("Stroke-width",10)
                 .attr("fill", "black")
                 .attr("id", function(d) {
                     return d.properties.name_eng;
                 })
-                .attr("class", "path")
-                .attr("opacity","1")
-                .on("mouseover", function() {
+                .attr("opacity", "1")
+                .on("mouseover", function(d) {
+                  // $(this).css('position', 'relative');
+                  // $(this).css('z-index',2);
+                  // console.log("mouseon");
+                  // console.log($(this).css('z-index'));
                     d3.select(this).transition()
-                        .duration(250).style("fill", "#eeeeef")
-                  
+                        .duration(250).style("fill", "#eeefff")
+                        .attr("transform", null)
+                        .attr("transform"," translate(0,-10)")
 
                 })
                 .on("mouseout", function() {
                     d3.select(this).transition()
-                        .ease("quad")
                         .duration(300)
                         .style("fill", "black")
+                        .attr("transform", "translate(0,0)");
+                    // $(this).css('z-index',1);
+                    // console.log("mouseout");
+                    // console.log($(this).css('z-index'));
                 });
         })
         console.log("mapcreated");
