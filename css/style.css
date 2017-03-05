@@ -1,7 +1,6 @@
 body{
   background: url('./bg.jpg');
 }
-
-svg{
-  transform:"scale(2.0)";
+.path:hover{
+    z-index:100;
 }
