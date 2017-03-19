@@ -1,0 +1,7 @@
+body{
+  background: url('./bg.jpg');
+}
+.loginform{
+  backgroud: url('./lgnWin.png');
+  width: 50%;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>login?</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="signin">
+        <div class="wrapper">
+            <main>
+                <div class="main-container">
+                    <div class="loginform" style="overflow: hidden">
+                        <form name="login" action="index_submit" method="get" accept-charset="utf-8">
+                            <!-- <ul name="loginUl">
+                                <li><label for="usermail">Email</label>
+                                    <input type="email" name="usermail" placeholder="yourname@email.com" required></li>
+                                <li><label for="password">Password</label>
+                                    <input type="password" name="password" placeholder="password" required></li>
+                                <li>
+                                    <input type="submit" value="Login"></li>
+                            </ul> -->
+                            <div class="signin-form">
+                                <form action="/user/signin" method="POST">
+                                    <legend> EMAIL</legend>
+                                    <input type="email" name="email">
+                                    <legend> PASSWORD</legend>
+                                    <input type="password" name="password">
+                                    <button type="submit"> 로그인</button>
+                                </form>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>
