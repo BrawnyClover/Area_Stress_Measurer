@@ -1,6 +1,6 @@
 function func(buttonValue) {
-    remove_div();
-    add_div(buttonValue);
+    // remove_div();
+    // add_div(buttonValue);
 }
 
 function add_div(buttonValue) {

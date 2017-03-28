@@ -38,6 +38,7 @@ button:hover {
     background-color: gray;
     vertical-align: middle;
     display: table-cell;
+    z-index: 1000;
 }
 
 #field {
@@ -46,10 +47,16 @@ button:hover {
 }
 
 #contentBox {
+    position: absolute;
     background: url('./lgnWin.png') no-repeat center;
-    background-size: contain;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     text-align: center;
-    line-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
     z-index: 100;
 }
 

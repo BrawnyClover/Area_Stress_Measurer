@@ -6,24 +6,58 @@
     <title>login?</title>
     <link href="css/lgin.css" rel="stylesheet" />
     <script src="js/windowCreation.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
     <div id="field">
-
         <div id="bar">
             <ul style="list-style-type:none">
-                <li><button id="front" onclick="func(this)"> front </button></li>
-                <li><button id="developer" onclick="func(this)"> developer </button></li>
-                <li><button id="login" onclick="func(this)"> login </button></li>
-                <li><button id="news" onclick="func(this)"> news </button></li>
-                <li><button id="bg" onclick="func(this)"> bg </button></li>
+                <li><button class="li-btn" id="front" onclick="func(this)"> front </button></li>
+                <li><button class="li-btn" id="developer" onclick="func(this)"> developer </button></li>
+                <li><button class="li-btn" id="login" onclick="func(this)"> login </button></li>
+                <li><button class="li-btn" id="news" onclick="func(this)"> news </button></li>
+                <li><button class="li-btn" id="bg" onclick="func(this)"> bg </button></li>
             </ul>
         </div>
         <div id="container">
         </div>
     </div>
 
+    <script>
+        $('button.li-btn').bind("mouseenter", function(e) {
+            if($('#contentBox').length) {
+                $('#contentBox').remove();
+            }
+            var value = $(e.target).attr('id');
+            $('#container')
+                .append('<div id="contentBox" class="contentBox" style="width:0%; height:10%; left:0; top:60%; ">'+ value +'</div>');
+            $('#contentBox')
+                .animate({
+                    width: "100%"
+                }, 1000)
+                .animate({
+                    height: "100%",
+                    top: "0px"
+                }, 200);
+        }).bind("click", function(e) {
+            $('#contentBox').addClass("clicked");
+        }).bind("mouseleave", function(e) {
+            console.log($('#contentBox').attr('class'));
+            if($('#contentBox').attr('class').indexOf("clicked") == -1) {
+                $('#contentBox')
+                    .animate({
+                        height: "10%",
+                        top: "60%"
+                    }, 200)
+                    .animate({
+                        left: "-100%"
+                    }, 1000, function() {
+                        $('#contentBox').remove();
+                    });
+            }
+        });
+    </script>
 </body>
 
 </html>
