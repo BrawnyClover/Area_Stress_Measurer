@@ -1,57 +1,64 @@
-html,body{
-  margin: 0;
-  height: 100%;
-  background: url('./background.jpg');
+html, body {
+    margin: 0;
+    height: 100%;
+    background: url('./background.jpg');
+    background-size: cover;
 }
-ul{
-  position: relative;
-  top:-590px;
-  width: 80px;
-  padding: 0px;
-  margin: 0;
-  height: 100%;
-}
-li{
-  width:inherit;
-  margin: 0;
-  padding: 0;
-}
-button{
-  z-index: 10;
-  background-color: transparent;
-  height: 50px;
-  width: 80px;
-  margin-top: 50px;
-  border:none;
-  color:white;
 
+ul {
+    width: 80px;
+    padding: 0px;
+    margin: 0;
 }
-button:hover{
-  background-color: #a09b9b;
-}
-#bar{
-  position: relative;
-  height:100vh;
-  width:80px;
-  background-color: gray;
 
+li {
+    width: inherit;
+    margin: 0;
+    padding: 0;
 }
-#field{
-  width:100%;
-  height: 100vh;
+
+button {
+    z-index: 10;
+    background-color: transparent;
+    height: 50px;
+    width: 80px;
+    margin-top: 50px;
+    border: none;
+    color: white;
 }
-#contentBox{
-  background: url('./lgnWin.png') no-repeat center;
-  background-size:contain;
-  text-align: center;
-  line-height: 100vh;
-  margin-top: -1200px;
-  z-index: 10;
+
+button:hover {
+    background-color: #a09b9b;
+}
+
+#bar {
+    position: relative;
+    height: 100vh;
+    width: 80px;
+    background-color: gray;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#field {
+    width: 100%;
+    height: 100vh;
+}
+
+#contentBox {
+    background: url('./lgnWin.png') no-repeat center;
+    background-size: contain;
+    text-align: center;
+    line-height: 100vh;
+    z-index: 100;
 }
 
 #container {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+    width: calc(100% - 80px);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 80px;
+    top: 0;
 }

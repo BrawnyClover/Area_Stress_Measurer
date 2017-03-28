@@ -8,7 +8,7 @@ function add_div(buttonValue) {
     div.id = "contentBox";
     div.innerHTML += document.getElementById(buttonValue.getAttribute('id')).getAttribute('id');
 
-    document.getElementById('field').appendChild(div);
+    document.getElementById('container').appendChild(div);
     console.log("clicked");
 }
 
