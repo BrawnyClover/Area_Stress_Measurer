@@ -4,28 +4,25 @@
 <head>
     <meta charset="utf-8">
     <title>login?</title>
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lgin.css" rel="stylesheet" />
+    <script src="js/windowCreation.js"></script>
 </head>
 
 <body>
-  <div id="backgroundImg">
-    <img src="./css/lgnWin.png" />
-  </div>
-    <div class="loginform" style="overflow: hidden">
-        <form name="login" action="index_submit" method="get" accept-charset="utf-8">
-            <ul name="loginUl">
-                <li><label for="usermail">Email</label>
-                    <input type="email" name="usermail" placeholder="yourname@email.com" required></li>
-                <li><label for="password">Password</label>
-                    <input type="password" name="password" placeholder="password" required></li>
-                    <li>
-                        <input type="submit" value="Login"></li>
-                        <li>
-                            <input type="submit" value="Login"></li>
+    <div id="field">
 
-            </ul>
-        </form>
-    </section>
+        <div id="bar"></div>
+        <ul style="list-style-type:none">
+            <li><button id="front" onclick="func(this)"> front </button></li>
+            <li><button id="developer" onclick="func(this)"> developer </button></li>
+            <li><button id="login" onclick="func(this)"> login </button></li>
+            <li><button id="news" onclick="func(this)"> news </button></li>
+            <li><button id="bg" onclick="func(this)"> bg </button></li>
+        </ul>
+        <div id="container">
+        </div>
+    </div>
+
 </body>
 
 </html>
