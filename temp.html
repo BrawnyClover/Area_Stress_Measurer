@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/test.css" rel="stylesheet" />
+    <title>test</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+    
+    <div id="bar2">    </div>
+    <button id="in"></button>
+    <script>
+
+      $("#in").bind("mouseenter",function(e){
+        $("#bar2").animate({
+          height:"100vh",
+          top:"0vh",
+          margin : "10vh 10vh 10vh 10vh"
+        },200);
+        console.log("yeah");
+      });
+      $("#in").bind("mouseleave",function(e){
+        $("#bar2").animate({
+          height:"1vh",
+          top:"50vh",
+          "margin-left":"100vh"
+        },200);
+        console.log("yeah");
+      });
+    </script>
+  </body>
+</html>

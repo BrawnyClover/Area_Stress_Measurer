@@ -1,0 +1,21 @@
+#bar2 {
+    position: relative;
+    height: 1vh;
+    width: 80px;
+    top:50vh;
+    margin-left: 100px;
+    background-color: gray;
+    vertical-align: middle;
+    display: table-cell;
+    z-index: 1000;
+}
+#in{
+/*?  position: relative;*/
+  /*margin: 10vh 0vh 0vh 0vh;
+  margin-left:100px;*/
+  height: 100px;
+  width: 100px;
+}
+#in:hover{
+  background-color: gray;
+}
