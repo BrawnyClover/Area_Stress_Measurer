@@ -1,8 +1,9 @@
 html, body {
     margin: 0;
     height: 100%;
-    background: url('./iconBackground.png') center no-repeat;
+    background: url('./iconBackground.png') center;
     background-size: cover;
+    overflow: hidden;
 }
 
 #btnList {
@@ -44,7 +45,7 @@ button:hover {
   to {
     background: transparent;
   }
-  50%{
+  40%{
     background-color: #159294;
   }
 }
@@ -81,7 +82,7 @@ button:hover {
 }
 #contentBox {
     position: absolute;
-    background: url('./lgnWin.png') no-repeat center;
+    background: url('./window.png') no-repeat center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     text-align: center;
@@ -94,13 +95,14 @@ button:hover {
 }
 
 #container {
-    width: calc(85% - 80px);
-    height: 99vh;
+    width: calc(75% - 80px);
+    height: 79vh;
     margin: 0;
     padding: 0;
     position: absolute;
     left: 80px;
-    top: 0;
+    top: 8vh;
+    color: white;
     /*border-style: solid;
     border-color: red;*/
 }
@@ -110,10 +112,36 @@ button:hover {
   /*top:50vh;*/
   width: 29vh;
   height: 100vh;
-  left:180vh;
+  left:150vh;
   list-style: none;
 }
 #conLi{
   height:30vh;
   width:10px;
+}
+#bar_long{
+  position: relative;
+  height:33vh;width:63vh;
+  /*left: 140vh;*/
+  top: -90vh;
+  background-image: url('./side_long.png');
+  background-size: cover;
+}
+#bar_clock{
+  /*left: 130vh;*/
+  position: relative;
+  height:30vh;width:30vh;
+  left:130vh;
+  top:4vh;
+  background-image: url('./side_top.png');
+  background-size: cover;
+}
+#bar_short{
+  /*left: 150vh;*/
+  position: relative;
+  height:30vh;width:30vh;
+  left:130vh;
+  top:4vh;
+  background-image: url('./side_top.png');
+  background-size: cover;
 }

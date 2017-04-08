@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <title>login?</title>
     <link href="css/lgin.css" rel="stylesheet" />
-    <script src="js/windowCreation.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/windowCreation.js"></script>
+    <script src="js/animation.js"></script>
 </head>
 
 <body>
@@ -25,84 +26,25 @@
         <img id="bar_bottom" src="./css/bar_bottom_color.png" alt="">
         <div id="container">
         </div>
-        <ul id="contentList">
-          <li id="conLi"><div style="height:30vh;width:25vh;border:2px solid blue;"></div></li>
-          <li id="conLi"><div style="height:30vh;width:25vh;border:2px solid red;"></div></li>
-          <li id="conLi"><div style="height:30vh;width:25vh;border:2px solid green;"></div></li>
-        </ul>
+        <div id="contentList">
+            <div style="" id="bar_long">
+                <!-- <img src="./css/side_long.png" alt="" style="height:28vh"> -->
+
+            </div>
+            <div style="" id="bar_clock">
+                <!-- <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;" /> -->
+            </div>
+            <div style="" id="bar_short">
+                <!-- <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;"> -->
+            </div>
+        </div>
     </div>
-
     <script>
-        var speed = 1200;
-        $("#bar_top").
-        animate({
-            left: "2vh"
-        }, speed / 2).
-        animate({
-            top: "3vh"
-        }, speed)
-        $("#bar")
-            .animate({
-                left: "2vh"
-            }, speed / 2)
-            .animate({
-                height: "87vh",
-                top: "-2vh"
-            }, speed);
-
-        $("#bar_bottom").
-        animate({
-            left: "2vh"
-        }, speed / 2).
-        animate({
-            bottom: "0vh",
-            top: "-5vh"
-        }, speed)
-        $(".li-btn").animate({
-            height: "10vh",
-            margin: "5vh 0vh 0vh 3vh"
-        }, 1500);
-        $('.btnLi').animate({
-            top: "10vh",
-            height: "10vh"
-        }, speed + 600)
-        $('button.li-btn')
-            .bind("mouseenter", function(e) {
-                if ($('#contentBox').length) {
-                    $('#contentBox').remove();
-                }
-                var value = $(e.target).attr('id');
-                $('#container')
-                    .append('<div id="contentBox" class="contentBox" style="width:0%; height:10%; left:0; top:45%; ">' + value + '</div>');
-                $('#contentBox')
-                    .animate({
-                        width: "100%"
-                    }, 700)
-                    .animate({
-                        height: "100%",
-                        top: "0px"
-                    }, 100);
-            })
-            .bind("click", function(e) {
-                $('#contentBox').addClass("clicked");
-            })
-            .bind("mouseleave", function(e) {
-                console.log($('#contentBox').attr('class'));
-                if ($('#contentBox').attr('class').indexOf("clicked") == -1) {
-                    $('#contentBox')
-                        .animate({
-                            height: "10%",
-                            top: "45%"
-                        }, 200)
-                        .animate({
-                            left: "-100%"
-                        }, 1000, function() {
-                            $('#contentBox').remove();
-                        });
-                }
-                console.log($("#bar").css("background-image"))
-            });
-        $("#contentList").css("top", "0vh").css("height", "50vh");
+    leftBarAnimation();
+    initButton();
+    longBarAnimation();
+    clockBarAnimation();
+    shortBarAnimation();
     </script>
 </body>
 
