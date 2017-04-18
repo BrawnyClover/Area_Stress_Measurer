@@ -1,0 +1,17 @@
+$('.logo').hover(
+    function(){
+        $(this).animate({backgroundImage: 'http://placehold.it/300x100/ffffff/000000.png&text=second'},'fast');
+    },
+    function(){
+        $(this).animate({backgroundImage: 'http://placehold.it/300x100/ffffff/000000.png&text=first'},'fast');
+});
+<!-- <ul id="contentList">
+  <li id="conLi"><div style="height:inherit;width:inherit;" id="bar_long">
+    <img src="./css/side_long.png" alt="" style="height:28vh">
+  </div></li>
+  <li id="conLi"><div style="float:left;height:inherit;width:50vh; padding:10px 10px 10px 10px" id="bar_short">
+    <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;"/>
+    <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;">
+  </div>
+  <li id="conLi"><div style="height:30vh;width:25vh;"></div></li>
+</ul> -->
