@@ -1,7 +1,44 @@
 var speed = 1100;
 
 var flag = 0;
+function mainBarLRAnimation(){
+  var d = $.Deferred();
+  setTimeout(function(){
 
+    $("#mainboxLeft")
+    .animate({
+      top:"13vh"
+    },speed)
+    $("#mainboxRight")
+    .animate({
+      top:"13vh"
+    },speed)
+    d.resolve();
+  },100);
+  return d.promise();
+}
+function mainBarAnimation(){
+  var d = $.Deferred();
+  setTimeout(function(){
+
+    $("#mainboxLeft")
+    .animate({
+      left:"35vh"
+    },speed-200)
+    $("#mainboxRight")
+    .animate({
+      left:"128vh"
+    },speed-200)
+    $(".contentBox")
+    .animate({
+      width:"90vh",
+      left:"-56vh",
+      "font-size":"10vh"
+    },speed+256)
+    d.resolve();
+  },1000);
+  return d.promise();
+}
 function longBarAnimation() {
   var d = $.Deferred();
   setTimeout(function(){
@@ -13,7 +50,7 @@ function longBarAnimation() {
           top:"7vh"
         },speed-600)
         .animate({
-          top:"4vh"
+          top:"1vh"
         },500)
       d.resolve();
       console.log("longBarAnimation");
@@ -67,8 +104,8 @@ function leftBarAnimation() {
             left: "2vh"
         }, (speed + 200) / 2)
         .animate({
-            height: "87vh",
-            top: "-2vh"
+            height: "80vh",
+            top: "5vh"
         }, speed);
 
     $("#bar_bottom")
@@ -77,11 +114,11 @@ function leftBarAnimation() {
         }, (speed + 200) / 2)
         .animate({
             bottom: "0vh",
-            top: "-5vh"
+            top: "82vh"
         }, speed)
     $(".li-btn").animate({
         height: "10vh",
-        margin: "5vh 0vh 0vh 3vh"
+        margin: "5vh 0vh 0vh 2vh"
     }, 1250);
     $('.btnLi').animate({
         top: "10vh",
@@ -93,49 +130,25 @@ function leftBarAnimation() {
 
     return d.promise();
 }
-
+var id = ['front','developer','login','news','bg'];
+var check = ['20vh','-350vh','-721vh','-1090vh','-1460vh'];
+var ind;
 function initButton() {
-  var d = $.Deferred();
-  setTimeout(function(){
-    $('button.li-btn')
-        .bind("mouseenter", function(e) {
-            if ($('#contentBox').length) {
-                $('#contentBox').remove();
-            }
-            var value = $(e.target).attr('id');
-            $('#container')
-                .append('<div id="contentBox" class="contentBox" style="width:0%; height:10%; left:0; top:45%; ">' + value + '</div>');
-            $('#contentBox')
-                .animate({
-                    width: "100%"
-                }, 700)
-                .animate({
-                    height: "100%",
-                    top: "0px"
-                }, 100);
-        })
-        .bind("click", function(e) {
-            $('#contentBox').addClass("clicked");
-        })
-        .bind("mouseleave", function(e) {
-            console.log($('#contentBox').attr('class'));
-            if ($('#contentBox').attr('class').indexOf("clicked") == -1) {
-                $('#contentBox')
-                    .animate({
-                        height: "10%",
-                        top: "45%"
-                    }, 200)
-                    .animate({
-                        left: "-100%"
-                    }, 1000, function() {
-                        $('#contentBox').remove();
-                    });
-            }
-            console.log($("#bar").css("background-image"))
-        });
+    $(".li-btn")
+    .bind("mouseenter",function(e){
+      console.log("enter");
+      id.forEach(
+        function findId(value, index){
+          if(value == $(e.target).attr('id')){
+            ind = index;
+          }
+        }
+      );
+      $('#container').
+      animate({
+        left:check[ind]
+      },speed);
+    })
     $("#contentList").css("top", "0vh").css("height", "50vh");
-    d.resolve();
-        console.log("initButton");
-  },1000);
-  return d.promise();
+    console.log("initButton");
 }

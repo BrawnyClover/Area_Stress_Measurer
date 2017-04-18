@@ -1,9 +1,14 @@
 html, body {
     margin: 0;
-    height: 100%;
-    background: url('./iconBackground.png') center;
-    background-size: cover;
-    overflow: hidden;
+    height:100vh;
+    overflow-x: hidden;
+}
+
+#backgroundImage{
+  position: absolute;
+  width: 100%;
+  /*top:-10vh;*/
+  /*z-index: 0;*/
 }
 
 #btnList {
@@ -26,7 +31,7 @@ html, body {
     z-index: 3;
     background-color: transparent;
     height: 0vh;
-    width: 10vh;
+    width: 13vh;
     margin-top: 0px;
     border: none;
     color: white;
@@ -51,60 +56,67 @@ button:hover {
 }
 
 #bar {
-    position: relative;
+    position: absolute;
     height: 1vh;
     width: 100px;
-    top:45vh;
-    margin-left: -100px;
+    top:50vh;
+    left:100vh;
     vertical-align: middle;
     display: table-cell;
-    z-index: 2;
-    background-image: url('./bar_fix.png');
+    z-index: 30;
+    background-image: url('./bar_trans.png');
         /*background-image: url('./bar_exam.png');*/
     /*background-image: url('./bar.png');*/
     left:-100vh;
 }
 #bar_top{
-  position:relative;
+  position:absolute;
   top:50vh;
   left: -100vh;
-  z-index: 10;
+  z-index: 40;
 }
 #bar_bottom{
-  position: relative;
-  top: 50vh;
+  position: absolute;
+  top: 55vh;
   left: -100vh;
-    z-index: 10;
+    z-index: 40;
 }
 #field {
+  /*border: blue solid 2px;*/
+  position: relative;
     width: 100%;
-    height: 100vh;
+    height: 200vh;
 }
-#contentBox {
-    position: absolute;
-    background: url('./window.png') no-repeat center;
+.contentBox {
+  float: right;
+    position: relative;
+    background: url('./mainBox2.png') no-repeat center;
     background-size: 100% 100%;
-    background-repeat: no-repeat;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: inherit;
-    height: inherit;
-    z-index: 1;
+    width: 0vh;
+    height: 60vh;
+    z-index: 10;
+    font-size: 0vh;
+    margin:0vh 200vh 0vh 79vh;
+    top:-4vh;
 }
 
 #container {
-    width: calc(75% - 80px);
-    height: 79vh;
+    width: 150vh;
+    height: 100px;
     margin: 0;
     padding: 0;
     position: absolute;
-    left: 80px;
-    top: 8vh;
+    left: 20vh;
+    top: 22vh;
     color: white;
     /*border-style: solid;
     border-color: red;*/
+    font-size: 0vh;
+    z-index: 10;
 }
 
 #contentList{
@@ -114,6 +126,7 @@ button:hover {
   height: 100vh;
   left:150vh;
   list-style: none;
+  z-index: 10;
 }
 #conLi{
   height:30vh;
@@ -124,24 +137,71 @@ button:hover {
   height:33vh;width:63vh;
   /*left: 140vh;*/
   top: -90vh;
-  background-image: url('./side_long.png');
+  background-image: url('./side_long_trans.png');
   background-size: cover;
 }
 #bar_clock{
   /*left: 130vh;*/
   position: relative;
-  height:30vh;width:30vh;
+  height:27vh;width:27vh;
   left:130vh;
-  top:4vh;
-  background-image: url('./side_top.png');
+  top:2vh;
+  background-image: url('./sidebar_trans.png');
   background-size: cover;
 }
 #bar_short{
   /*left: 150vh;*/
   position: relative;
-  height:30vh;width:30vh;
+  height:27vh;width:27vh;
   left:130vh;
-  top:4vh;
-  background-image: url('./side_top.png');
+  top:2vh;
+  background-image: url('./sidebar_trans.png');
   background-size: cover;
+}
+#bar_short:hover,#bar_clock:hover {
+  animation-duration: 0.5s;
+  animation-name: goLeft;
+}
+@keyframes goLeft {
+  from {
+    left: 30vh;
+  }
+  30% {
+    left:27vh;
+  }
+  to{
+    left:30vh;
+  }
+}
+
+#mainboxLeft{
+  position : absolute;
+  height:70vh;
+  width:15vh;
+  top:120vh;
+  left:90vh;
+  z-index: 11;
+}
+#mainboxRight{
+  position : absolute;
+  height:70vh;
+  width:15vh;
+  top:120vh;
+    left:100vh;
+      z-index: 11;
+}
+#bottom{
+  height: 20vh;
+  width:100%;
+  z-index: 10;
+  background-color: black;
+}
+
+#wrapper{
+   height:90vh;
+   width:100%;
+   background-image:url('./logoBackgroundDec.png');
+   background-position: center;
+   background-size: cover;
+   /*border-bottom: solid 2px white;*/
 }

@@ -11,40 +11,101 @@
 </head>
 
 <body>
-    <div id="field">
-        <img id="bar_top" src="./css/bar_top_color.png" alt="">
-        <div id="bar">
-            <ul id="btnList" style="list-style-type:none">
-                <li class="btnLi"><button class="li-btn" id="front" onclick="func(this)"> front </button></li>
-                <li class="btnLi"><button class="li-btn" id="developer" onclick="func(this)"> developer </button></li>
-                <li class="btnLi"><button class="li-btn" id="login" onclick="func(this)"> login </button></li>
-                <li class="btnLi"><button class="li-btn" id="news" onclick="func(this)"> news </button></li>
-                <li class="btnLi"><button class="li-btn" id="bg" onclick="func(this)"> bg </button></li>
-            </ul>
-        </div>
 
-        <img id="bar_bottom" src="./css/bar_bottom_color.png" alt="">
-        <div id="container">
-        </div>
-        <div id="contentList">
-            <div style="" id="bar_long">
-                <!-- <img src="./css/side_long.png" alt="" style="height:28vh"> -->
+    <header style="height:10vh;margin:0;z-index:110;background-color:black;color:white">
+      Area stress Measurer
+    </header>
+    <main id="field">
+
+        <article>
+          <!-- <img id="backgroundImage" src="./css/logoBackgroundDec.png" /> -->
+            <div id="wrapper">
+
+                <img id="bar_top" src="./css/bar_top_color.png" alt="">
+                <div id="bar">
+                    <ul id="btnList" style="list-style-type:none">
+                        <li class="btnLi"><button class="li-btn" id="front" onclick="func(this)"> front </button></li>
+                        <li class="btnLi"><button class="li-btn" id="developer" onclick="func(this)"> developer </button></li>
+                        <li class="btnLi"><button class="li-btn" id="login" onclick="func(this)"> login </button></li>
+                        <li class="btnLi"><button class="li-btn" id="news" onclick="func(this)"> news </button></li>
+                        <li class="btnLi"><button class="li-btn" id="bg" onclick="func(this)"> bg </button></li>
+                    </ul>
+                </div>
+
+                <img id="bar_bottom" src="./css/bar_bottom_color.png" alt="">
+
+                <img id="mainboxLeft" src="./css/mainBoxBarLeft.png" alt="">
+                <div id="container">
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="frontBox" class="contentBox">front</div>
+                            </td>
+                            <td>
+                                <div id="devBox" class="contentBox">developer</div>
+                            </td>
+                            <td>
+                                <div id="lgnBox" class="contentBox">login</div>
+                            </td>
+                            <td>
+                                <div id="newsBox" class="contentBox">news</div>
+                            </td>
+                            <td>
+                                <div id="bgBox" class="contentBox">bg</div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <img id="mainboxRight" src="./css/mainBoxBarRight.png" alt="">
+                <div id="contentList">
+                    <div style="" id="bar_long">
+                        <!-- <img src="./css/side_long.png" alt="" style="height:28vh"> -->
+
+                    </div>
+                    <div style="" id="bar_clock">
+                        <!-- <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;" /> -->
+                    </div>
+                    <div style="" id="bar_short">
+                        <!-- <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;"> -->
+                    </div>
+                </div>
+            </div>
+
+        </article>
+        <article>
+            <div style="height:110vh; background-image:url('./css/bg2.png')">
 
             </div>
-            <div style="" id="bar_clock">
-                <!-- <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;" /> -->
-            </div>
-            <div style="" id="bar_short">
-                <!-- <img src="./css/side_top.png" alt="" style="height:28vh;width:23vh;"> -->
-            </div>
-        </div>
-    </div>
+        </article>
+    </main>
+    <footer id="bottom">
+      <div style="z-index:100; color:white">
+        front Developed by MJ,Son
+      </div>
+    </footer>
     <script>
-    leftBarAnimation();
-    initButton();
-    longBarAnimation();
-    clockBarAnimation();
-    shortBarAnimation();
+        leftBarAnimation();
+        mainBarLRAnimation();
+        mainBarAnimation();
+        initButton();
+        longBarAnimation();
+        clockBarAnimation();
+        shortBarAnimation();
+        // $(document).on("mousewheel.disableScroll DOMMouseScroll.disableScroll touchmove.disableScroll", function(e) {
+        //     e.preventDefault();
+        //     return;
+        // });
+        // $(document).on("keydown.disableScroll", function(e) {
+        //     var eventKeyArray = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+        //     for (var i = 0; i < eventKeyArray.length; i++) {
+        //         if (e.keyCode === eventKeyArray[i]) {
+        //             e.preventDefault();
+        //             return;
+        //         }
+        //     }
+        //     $(document).off(".disableScroll");
+        // });
     </script>
 </body>
 
