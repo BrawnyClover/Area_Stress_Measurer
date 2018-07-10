@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IndexMay</title>
+        <script src="./jquery.min.js"></script>
+        <script src="./d3.min.js"></script>
+        <script src="./topojson.min.js"></script>
+        <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href="css/indexMay.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <header style="height:10vh;margin:0;z-index:110;background-color:black;color:white">
+            Area stress Measurer
+        </header>
+
+        <main id="field">  
+            <article> 
+                <div id="tooltip" style='width:100px; height:100px; position:absolute; display:none; background-color: coral'></div>
+
+                </div>
+                <div id="wrapper"> 
+                    <div id="leftContent">
+                        </div>
+                    <div id="map">
+                        <script src="./js/mapCreate.js"></script>
+                        </div>
+                    <div id="rightContent">
+                        </div>
+                </div>
+            </article>
+        </main>
+    </body>
+
+    <footer id="bottom">
+        <div style="color:white">
+            map show window
+        </div>
+    </footer>
+
+</html>
