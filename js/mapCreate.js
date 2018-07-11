@@ -16,18 +16,24 @@ function getAbsolutePos(obj) {
     }
     return position;
 }
-function createTooltip(cursorX, cursorY){
-    // var tooltip = document.createElement("div");
-    // tooltip.setAttribute("id","tooltip");
-    // tooltip.setAttribute("position","absolute");
-    // tooltip.style.left=(cursorX-64)+"px";
-    // tooltip.style.top=(cursorY-64)+"px";
-    // document.getElementById("#wrapper").appendChild(tooltip);
+function createTooltip(cursorX, cursorY, node){
+    console.log("cursorY:"+cursorY);
+    var adder = -200;
+    if(cursorY+300>550){
+        adder = -250;
+    }
+    else if (cursorY-300<0){
+        adder = -100;
+    }
+    var text = node.parentNode.firstChild.id;
     $("#tooltip").css({
         "display":"block",
-        "top":cursorY,
-        "left":cursorX,
+        "top":cursorY+adder,
+        "left":cursorX+50,
+        "background-image":"url('./css/map_detail.png')",
         "position": "absolute"}).show();
+        console.log("createTooltip");
+    $("#tooltip").text(text);
 }
 function removeTooltip()
 {
@@ -84,12 +90,12 @@ d3.json("./mp.geojson", function(data) {
             position = getAbsolutePos(d3.select(this));
             d3.select(this).transition()
                 .attr("transform", null)
-                .attr("transform", " translate(0,-10)")
+                .attr("transform", " translate(0,-8)")
                 .duration(400).style("fill", "#eeefff")
             d3.select(this).moveToFront();
             var cursorX = event.pageX;
             var cursorY = event.pageY;
-            createTooltip(cursorX,cursorY);
+            createTooltip(cursorX,cursorY,this);
         })
         .on("mouseout", function() {
             d3.select(this).transition()
